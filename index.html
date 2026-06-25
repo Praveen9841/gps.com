@@ -13,19 +13,16 @@
   <link rel="shortcut icon" href="./GPS_LOGO.png">
   <link rel="stylesheet" type="text/css" href="assets/fonts/unicons/unicons.css">
   <link rel="stylesheet" href="assets/css/plugins.css">
-  <link rel="stylesheet" href="./assets/css/style.css">
-
+  <link rel="stylesheet" href="./assets/css/style.css?v=2.0">
 </head>
 
 <body class="onepage">
   <div class="grow shrink-0">
-    <header class="relative wrapper !bg-[#ffffff] ">
+    <header class="relative wrapper !bg-[#ffffff]" id="main-header">
       <nav class="navbar navbar-expand-lg center-nav transparent navbar-light">
         <div class="container xl:!flex-row lg:!flex-row !flex-nowrap items-center">
           <div class="navbar-brand !w-auto">
-            <!--<a href='https://sandbox-tailwind-template.netlify.app/'>-->
             <img src="./GPS_N&L.png" alt="GPublishing Service" style="height: 110px;" class="navbar-logo-img" />
-            <!-- </a> -->
           </div>
           <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
             <div class="offcanvas-header xl:!hidden lg:!hidden flex items-center justify-between flex-row p-6">
@@ -39,8 +36,8 @@
                 <li class="nav-item"><a class="nav-link scroll active" href="#home">Home</a></li>
                 <li class="nav-item"><a class="nav-link scroll" href="#services">Services</a></li>
                 <li class="nav-item"><a class="nav-link scroll" href="#process">About</a></li>
-                <!-- <li class="nav-item"><a class="nav-link scroll" href="#about">Team</a></li>
-                <li class="nav-item"><a class="nav-link scroll" href="#testimonials">Projects</a></li> -->
+
+                <li class="nav-item"><a class="nav-link scroll" href="#testimonials">Projects</a></li>
                 <li class="nav-item"><a class="nav-link scroll" href="#contact">Contact</a></li>
               </ul>
               <!-- /.navbar-nav -->
@@ -78,16 +75,7 @@
           <div class="navbar-other !w-auto !flex !ml-auto">
             <ul class="navbar-nav !flex-row !items-center !ml-auto">
               <li class="nav-item dropdown language-select uppercase group">
-                <!--<a class="nav-link dropdown-item dropdown-toggle" href="onepage.html#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">En</a>
-                 <ul class="dropdown-menu group-hover:shadow-[0_0.25rem_0.75rem_rgba(30,34,40,0.15)]">
-                  <li class="nav-item"><a class="dropdown-item hover:!text-[#3f78e0] hover:bg-[inherit] " href="onepage.html#">En</a></li>
-                  <li class="nav-item"><a class="dropdown-item hover:!text-[#3f78e0] hover:bg-[inherit] " href="onepage.html#">De</a></li>
-                  <li class="nav-item"><a class="dropdown-item hover:!text-[#3f78e0] hover:bg-[inherit] " href="onepage.html#">Es</a></li>
-                </ul> -->
               </li>
-              <!-- <li class="nav-item hidden xl:block lg:block md:block">
-                <a class='btn btn-sm btn-primary !text-white !bg-[#3f78e0] border-[#3f78e0] hover:text-white hover:bg-[#3f78e0] hover:!border-[#3f78e0]   active:text-white active:bg-[#3f78e0] active:border-[#3f78e0] disabled:text-white disabled:bg-[#3f78e0] disabled:border-[#3f78e0] !rounded-[50rem] hover:translate-y-[-0.15rem] hover:shadow-[0_0.25rem_0.75rem_rgba(30,34,40,0.15)]' href='https://sandbox-tailwind-template.netlify.app/contact'>Contact</a>
-              </li> -->
               <li class="nav-item xl:!hidden lg:!hidden">
                 <button class="hamburger offcanvas-nav-btn"><span></span></button>
               </li>
@@ -109,7 +97,8 @@
             <div class="xl:w-9/12 lg:w-9/12 xxl:w-7/12 w-full flex-[0_0_auto] !px-[15px] max-w-full !mx-auto"
               data-cues="zoomIn" data-group="welcome" data-interval="-200">
               <h2 class="!text-[calc(1.365rem_+_1.38vw)] font-bold !leading-[1.2] xl:!text-[2.4rem] !mb-4">
-                <span class="typing-container-js" style="border-right: 3px solid #3f78e0; padding-right: 2px;"></span>
+                <span class="typing-container-js"
+                  style="border-right: 3px solid #3f78e0; padding-right: 2px; white-space: nowrap;"></span>
               </h2>
               <p class="lead !text-[1.2rem] leading-normal md:!px-5 lg:!px-5 xl:!px-20 xxl:!px-10">Every story begins as
                 a whisper <br>we help turn it into a voice the world can hear</p>
@@ -122,14 +111,16 @@
               class="md:w-10/12 xl:w-8/12 lg:w-8/12 w-full flex-[0_0_auto] !px-[15px] max-w-full xl:!ml-[16.66666667%] lg:!ml-[16.66666667%] md:!ml-[8.33333333%]">
               <div class="img-slideshow anim-float anim-glow" data-slideshow="true">
                 <div class="slide-item active">
-                  <img class="w-auto m-[0_auto]" src="assets/img/illustrations/i8.png" alt="Publishing workspace">
+                  <img class="hero-slideshow-img w-full m-[0_auto]" src="assets/img/illustrations/i8.png"
+                    alt="Publishing workspace">
                 </div>
                 <div class="slide-item">
-                  <img class="w-auto m-[0_auto]" src="assets/img/illustrations/hero_publishing.png"
+                  <img class="hero-slideshow-img w-full m-[0_auto]" src="assets/img/illustrations/hero_publishing.png"
                     alt="Publishing illustration">
                 </div>
                 <div class="slide-item">
-                  <img class="w-auto m-[0_auto]" src="assets/img/illustrations/hero_books_stack.png" alt="Books stack">
+                  <img class="hero-slideshow-img w-full m-[0_auto]" src="assets/img/illustrations/hero_books_stack.png"
+                    alt="Books stack">
                 </div>
               </div>
             </div>
@@ -244,7 +235,7 @@
               class="xl:w-7/12 lg:w-7/12 w-full flex-[0_0_auto] xl:!px-[35px] lg:!px-[20px] !px-[15px] !mt-[50px] max-w-full">
               <div class="img-slideshow perspective-container anim-reveal slide-left" data-slideshow="true">
                 <div class="slide-item active">
-                  <img class="w-auto" src="assets/img/illustrations/i3.png" alt="About us">
+                  <img class="w-full" src="assets/img/illustrations/i3.png" alt="About us">
                 </div>
               </div>
             </div>
@@ -295,13 +286,13 @@
               class="xl:w-7/12 lg:w-7/12 w-full flex-[0_0_auto] xl:!px-[35px] lg:!px-[20px] !px-[15px] !mt-[50px] max-w-full xl:!order-2 lg:!order-2">
               <div class="img-slideshow anim-3d-tilt" data-slideshow="true">
                 <div class="slide-item active">
-                  <img class="w-auto" src="assets/img/illustrations/i2.png" alt="Why choose us">
+                  <img class="w-full" src="assets/img/illustrations/i2.png" alt="Why choose us">
                 </div>
                 <div class="slide-item">
-                  <img class="w-auto" src="assets/img/illustrations/why_choose_us.png" alt="Team collaboration">
+                  <img class="w-full" src="assets/img/illustrations/why_choose_us.png" alt="Team collaboration">
                 </div>
                 <div class="slide-item">
-                  <img class="w-auto" src="assets/img/illustrations/quality_assurance.png" alt="Quality assurance">
+                  <img class="w-full" src="assets/img/illustrations/quality_assurance.png" alt="Quality assurance">
                 </div>
               </div>
             </div>
@@ -390,13 +381,13 @@
               class="xl:w-7/12 lg:w-7/12 w-full flex-[0_0_auto] xl:!px-[35px] lg:!px-[20px] !px-[15px] !mt-[70px] max-w-full xl:!order-2 lg:!order-2">
               <div class="img-slideshow perspective-container anim-reveal zoom-3d" data-slideshow="true">
                 <div class="slide-item active">
-                  <img class="w-auto" src="assets/img/illustrations/i4.png" alt="Testimonials">
+                  <img class="w-full" src="assets/img/illustrations/i4.png" alt="Testimonials">
                 </div>
                 <div class="slide-item">
-                  <img class="w-auto" src="assets/img/illustrations/testimonials_reviews.png" alt="Client reviews">
+                  <img class="w-full" src="assets/img/illustrations/testimonials_reviews.png" alt="Client reviews">
                 </div>
                 <div class="slide-item">
-                  <img class="w-auto" src="assets/img/illustrations/happy_readers.png" alt="Happy readers">
+                  <img class="w-full" src="assets/img/illustrations/happy_readers.png" alt="Happy readers">
                 </div>
               </div>
             </div>
@@ -487,7 +478,7 @@
           <div class="flex flex-wrap mx-[-15px] xl:mx-[-35px] lg:mx-[-20px] !mt-[-50px] items-center">
             <div
               class="xl:w-7/12 lg:w-7/12 w-full flex-[0_0_auto] xl:!px-[35px] lg:!px-[20px] !px-[15px] !mt-[50px] max-w-full">
-              <figure class="m-0 p-0"><img class="w-auto illustration-contact" src="assets/img/illustrations/i5.png"
+              <figure class="m-0 p-0"><img class="w-full illustration-contact" src="assets/img/illustrations/i5.png"
                   srcset="assets/img/illustrations/i5@2x.png 2x" alt="image"></figure>
             </div>
             <!--/column -->
@@ -649,10 +640,7 @@
           <div class="widget !text-[#cacaca]">
             <h4 class="widget-title !text-white !mb-3">Learn More</h4>
             <ul class="pl-0 list-none   !mb-0">
-              <!-- <li class="!mt-[0.35rem]"><a class="!text-[#cacaca] hover:!text-[#3f78e0]" href="#home">About Us</a>
-              </li> -->
-              <!-- <li class="!mt-[0.35rem]"><a class="!text-[#cacaca] hover:!text-[#3f78e0]"
-                  href="#home">Projects</a></li> -->
+
               <li class="!mt-[0.35rem]"><a class="!text-[#cacaca] hover:!text-[#3f78e0]" href="#process">Our Story</a>
               </li>
               <li class="!mt-[0.35rem]"><a class="!text-[#cacaca] hover:!text-[#3f78e0]" href="#home">Terms of
@@ -746,139 +734,7 @@
     </svg>
   </div>
   <script src="assets/js/plugins.js"></script>
-  <script src="assets/js/theme.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const text = "Craft. Visualize. Deliver.";
-      const el = document.querySelector('.typing-container-js');
-      if (el) {
-        let i = 0;
-        // Adding the blinking CSS dynamically for the caret
-        const style = document.createElement('style');
-        style.innerHTML = `
-          .typing-container-js {
-            animation: blink-caret-js 1s step-end infinite;
-          }
-          @keyframes blink-caret-js {
-            from, to { border-color: transparent }
-            50% { border-color: #2e2e2e; }
-          }
-        `;
-        document.head.appendChild(style);
-
-        function typeWriter() {
-          if (i < text.length) {
-            el.innerHTML += text.charAt(i);
-            i++;
-            // Randomize typing speed a bit for realism (50ms to 150ms)
-            setTimeout(typeWriter, Math.random() * 100 + 50);
-          } else {
-            // Wait 10 seconds after completion, then reset and loop
-            setTimeout(function () {
-              el.innerHTML = '';
-              i = 0;
-              typeWriter();
-            }, 10000);
-          }
-        }
-
-        // Start typing after a short delay
-        setTimeout(typeWriter, 500);
-      }
-    });
-  </script>
-  <script>
-    // Advanced image slideshow with varied transition effects
-    document.addEventListener('DOMContentLoaded', function () {
-      // Define transition pairs: [enter effect class, exit effect class]
-      var effects = [
-        ['fx-fade', 'exit-fade'],
-        ['fx-fly-left', 'exit-fly-right'],
-        ['fx-fly-right', 'exit-fly-left'],
-        ['fx-fly-up', 'exit-fly-down'],
-        ['fx-zoom-rotate', 'exit-zoom-out'],
-        ['fx-flip', 'exit-flip'],
-        ['fx-blur-scale', 'exit-blur'],
-        ['fx-fly-down', 'exit-fly-up']
-      ];
-
-      var allFxClasses = [];
-      effects.forEach(function (pair) {
-        allFxClasses.push(pair[0], pair[1]);
-      });
-
-      document.querySelectorAll('.img-slideshow[data-slideshow]').forEach(function (slideshow, idx) {
-        var slides = slideshow.querySelectorAll('.slide-item');
-        if (slides.length <= 1) return;
-        var current = 0;
-        var effectIndex = idx % effects.length; // start each slideshow on a different effect
-
-        setInterval(function () {
-          var currentSlide = slides[current];
-          var next = (current + 1) % slides.length;
-          var nextSlide = slides[next];
-          var effect = effects[effectIndex];
-
-          // Clean all fx classes from all slides
-          slides.forEach(function (s) {
-            allFxClasses.forEach(function (cls) { s.classList.remove(cls); });
-          });
-
-          // Apply enter effect to the next slide (set initial state)
-          nextSlide.classList.add(effect[0]);
-
-          // Force reflow so the browser registers the initial state
-          void nextSlide.offsetWidth;
-
-          // Apply exit to current, activate next
-          currentSlide.classList.remove('active');
-          currentSlide.classList.add(effect[1]);
-          nextSlide.classList.remove(effect[0]);
-          nextSlide.classList.add('active');
-
-          current = next;
-          effectIndex = (effectIndex + 1) % effects.length;
-        }, 3500);
-      });
-    });
-  </script>
-  <script>
-    // Scroll-triggered 3D reveal animations
-    document.addEventListener('DOMContentLoaded', function () {
-      var revealElements = document.querySelectorAll('.anim-reveal, .service-card');
-      var observer = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      }, {
-        threshold: 0.15,
-        rootMargin: '0px 0px -50px 0px'
-      });
-
-      revealElements.forEach(function (el) {
-        observer.observe(el);
-      });
-
-      // 3D mouse tilt effect on slideshows
-      document.querySelectorAll('.anim-3d-tilt').forEach(function (el) {
-        el.addEventListener('mousemove', function (e) {
-          var rect = el.getBoundingClientRect();
-          var x = e.clientX - rect.left;
-          var y = e.clientY - rect.top;
-          var centerX = rect.width / 2;
-          var centerY = rect.height / 2;
-          var rotateX = ((y - centerY) / centerY) * -8;
-          var rotateY = ((x - centerX) / centerX) * 8;
-          el.style.transform = 'rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) scale(1.02)';
-        });
-        el.addEventListener('mouseleave', function () {
-          el.style.transform = 'rotateX(0deg) rotateY(0deg) scale(1)';
-        });
-      });
-    });
-  </script>
+  <script src="assets/js/theme.js?v=2.0"></script>
 </body>
 
 </html>

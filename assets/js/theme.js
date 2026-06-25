@@ -1,4 +1,119 @@
 'use strict';
+
+function initCustomScripts() {
+  // 1. Slogan Typewriter
+  var text = "Craft. Visualize. Deliver.";
+  var el = document.querySelector('.typing-container-js');
+  if (el) {
+    var i = 0;
+    var style = document.createElement('style');
+    style.innerHTML = '\n      .typing-container-js {\n        animation: blink-caret-js 1s step-end infinite;\n        white-space: nowrap;\n      }\n      @keyframes blink-caret-js {\n        from, to { border-color: transparent }\n        50% { border-color: #2e2e2e; }\n      }\n    ';
+    document.head.appendChild(style);
+
+    function typeWriter() {
+      if (i < text.length) {
+        el.innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, Math.random() * 100 + 50);
+      } else {
+        setTimeout(function () {
+          el.innerHTML = '';
+          i = 0;
+          typeWriter();
+        }, 10000);
+      }
+    }
+    setTimeout(typeWriter, 500);
+  }
+
+  // 2. Advanced image slideshow with varied transition effects
+  var effects = [
+    ['fx-fade', 'exit-fade'],
+    ['fx-fly-left', 'exit-fly-right'],
+    ['fx-fly-right', 'exit-fly-left'],
+    ['fx-fly-up', 'exit-fly-down'],
+    ['fx-zoom-rotate', 'exit-zoom-out'],
+    ['fx-flip', 'exit-flip'],
+    ['fx-blur-scale', 'exit-blur'],
+    ['fx-fly-down', 'exit-fly-up']
+  ];
+
+  var allFxClasses = [];
+  effects.forEach(function (pair) {
+    allFxClasses.push(pair[0], pair[1]);
+  });
+
+  document.querySelectorAll('.img-slideshow[data-slideshow]').forEach(function (slideshow, idx) {
+    var slides = slideshow.querySelectorAll('.slide-item');
+    if (slides.length <= 1) return;
+    var current = 0;
+    var effectIndex = idx % effects.length;
+
+    setInterval(function () {
+      var currentSlide = slides[current];
+      var next = (current + 1) % slides.length;
+      var nextSlide = slides[next];
+      var effect = effects[effectIndex];
+
+      slides.forEach(function (s) {
+        allFxClasses.forEach(function (cls) { s.classList.remove(cls); });
+      });
+
+      nextSlide.classList.add(effect[0]);
+      void nextSlide.offsetWidth;
+
+      currentSlide.classList.remove('active');
+      currentSlide.classList.add(effect[1]);
+      nextSlide.classList.remove(effect[0]);
+      nextSlide.classList.add('active');
+
+      current = next;
+      effectIndex = (effectIndex + 1) % effects.length;
+    }, 3500);
+  });
+
+  // 3. Scroll-triggered 3D reveal animations & 3D mouse tilt
+  var revealElements = document.querySelectorAll('.anim-reveal, .service-card');
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, {
+    threshold: 0.15,
+    rootMargin: '0px 0px -50px 0px'
+  });
+
+  revealElements.forEach(function (el) {
+    observer.observe(el);
+  });
+
+  document.querySelectorAll('.anim-3d-tilt').forEach(function (el) {
+    el.addEventListener('mousemove', function (e) {
+      var rect = el.getBoundingClientRect();
+      var x = e.clientX - rect.left;
+      var y = e.clientY - rect.top;
+      var centerX = rect.width / 2;
+      var centerY = rect.height / 2;
+      var rotateX = ((y - centerY) / centerY) * -8;
+      var rotateY = ((x - centerX) / centerX) * 8;
+      el.style.transform = 'rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) scale(1.02)';
+    });
+    el.addEventListener('mouseleave', function () {
+      el.style.transform = 'rotateX(0deg) rotateY(0deg) scale(1)';
+    });
+  });
+}
+
+if (document.readyState === 'complete' || document.readyState === 'interactive') {
+  initCustomScripts();
+} else {
+  document.addEventListener('DOMContentLoaded', initCustomScripts);
+}
+
+
+
 var theme = {
   /**
    * Theme's components/functions list
@@ -11,7 +126,7 @@ var theme = {
     theme.subMenu();
     theme.offCanvas();
     theme.isotope();
-    theme.onepageHeaderOffset();
+    // theme.onepageHeaderOffset();
     theme.spyScroll();
     theme.anchorSmoothScroll();
     theme.svgInject();
@@ -216,8 +331,10 @@ var theme = {
         if (top >= offset && top < offset + height) {
           navLinks.forEach(links => {
             links.classList.remove('active');
-            document.querySelector(`.nav-link.scroll[href*=${id}]`).classList.add('active');
-            //[att*=val] Represents an element with the att attribute whose value contains at least one instance of the substring "val". If "val" is the empty string then the selector does not represent anything.
+            let matchingLink = document.querySelector(`.nav-link.scroll[href*=${id}]`);
+            if (matchingLink) {
+              matchingLink.classList.add('active');
+            }
           });
         }
       });
@@ -237,11 +354,14 @@ var theme = {
       e.preventDefault();
       this.blur();
       const href = this.getAttribute("href");
-      const offsetTop = document.querySelector(href).offsetTop;
-      scroll({
-        top: offsetTop,
-        behavior: "smooth"
-      });
+      const targetElement = document.querySelector(href);
+      if (targetElement) {
+        const offsetTop = targetElement.offsetTop;
+        scroll({
+          top: offsetTop - 75,
+          behavior: "smooth"
+        });
+      }
     }
   },
   /**
